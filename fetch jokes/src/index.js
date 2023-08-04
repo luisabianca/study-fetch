@@ -1,10 +1,12 @@
 const bodyHtml = document.getElementById("app");
 
-const mycep = (item) => {
-  const cep = fetch(`https://viacep.com.br/ws/${item}/json/`);
+const fetchJokes = () => {
+  const cep = fetch(`https://api.chucknorris.io/jokes/random`);
 
   cep.then((res) => res.json())
-  .then((body) => bodyHtml.innerHTML = body.logradouro);
+  .then((body) => bodyHtml.innerHTML =`"${body.value}"`);
 }
 
-mycep(24030091)
+document.getElementById("next").addEventListener('click', () => fetchJokes())
+
+fetchJokes()
