@@ -14,4 +14,6 @@ const fetchBitcoin = () => {
     );
 };
 
-setInterval(fetchBitcoin, 200);
+fetchBitcoin()
+
+// setInterval(fetchBitcoin, 10000);
